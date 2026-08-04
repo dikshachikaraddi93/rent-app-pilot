@@ -1,7 +1,9 @@
-import api from "./axiosConfig";
+import axios from "axios";
 
-export const getProperties = () => api.get("/properties");
+const API = axios.create({
+  baseURL: "http://localhost:8080/api",
+});
 
-export const getTenants = () => api.get("/tenants");
-
-export const getPayments = () => api.get("/payments");
+export const getProperties = () => API.get("/properties");
+export const getTenants = () => API.get("/tenants");
+export const getPayments = () => API.get("/payments");
